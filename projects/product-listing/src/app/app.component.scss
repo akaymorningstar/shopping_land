@@ -1,0 +1,23 @@
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Adjust image to cover the card */
+  }
+  
+.card-body {
+    position: relative;
+}
+  
+.btn {
+    margin-top: 10px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 300ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

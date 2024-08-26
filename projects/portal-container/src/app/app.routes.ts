@@ -2,11 +2,16 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-      path: 'product-listing',
+      path: 'home',
       loadComponent: () => import('productListing/Component').then(m => m.AppComponent),
+      // children: [
+      //   { path: 'product-details',
+      //     loadComponent: () => import('productDetails/Component').then(m => m.AppComponent) 
+      //   }
+      // ] 
     },
     {
-        path: 'product-listing/product-details',
+        path: 'product-details',
         loadComponent: () => import('productDetails/Component').then(m => m.AppComponent)
     },
     {
@@ -19,6 +24,6 @@ export const routes: Routes = [
     },
     {
       path: '**',
-      redirectTo: 'remote',
+      redirectTo: 'home',
     },
 ];

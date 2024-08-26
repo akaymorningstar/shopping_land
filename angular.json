@@ -32,7 +32,9 @@
 							}
 						],
 						"styles": [
-							"projects/portal-container/src/styles.scss"
+							"projects/portal-container/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": [],
 						"main": "projects/portal-container/src/main.ts",
@@ -101,7 +103,9 @@
 							}
 						],
 						"styles": [
-							"projects/portal-container/src/styles.scss"
+							"projects/portal-container/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": []
 					}
@@ -137,7 +141,9 @@
 							}
 						],
 						"styles": [
-							"projects/product-listing/src/styles.scss"
+							"projects/product-listing/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": [],
 						"main": "projects/product-listing/src/main.ts",
@@ -206,7 +212,9 @@
 							}
 						],
 						"styles": [
-							"projects/product-listing/src/styles.scss"
+							"projects/product-listing/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": []
 					}
@@ -242,7 +250,9 @@
 							}
 						],
 						"styles": [
-							"projects/product-details/src/styles.scss"
+							"projects/product-details/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": [],
 						"main": "projects/product-details/src/main.ts",
@@ -311,7 +321,9 @@
 							}
 						],
 						"styles": [
-							"projects/product-details/src/styles.scss"
+							"projects/product-details/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": []
 					}
@@ -347,7 +359,9 @@
 							}
 						],
 						"styles": [
-							"projects/shopping-cart/src/styles.scss"
+							"projects/shopping-cart/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": [],
 						"main": "projects/shopping-cart/src/main.ts",
@@ -416,7 +430,9 @@
 							}
 						],
 						"styles": [
-							"projects/shopping-cart/src/styles.scss"
+							"projects/shopping-cart/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": []
 					}
@@ -452,7 +468,9 @@
 							}
 						],
 						"styles": [
-							"projects/checkout/src/styles.scss"
+							"projects/checkout/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": [],
 						"main": "projects/checkout/src/main.ts",
@@ -521,7 +539,9 @@
 							}
 						],
 						"styles": [
-							"projects/checkout/src/styles.scss"
+							"projects/checkout/src/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/bootstrap-icons/font/bootstrap-icons.css"
 						],
 						"scripts": []
 					}
