@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet , RouterLink, Router } from '@angular/router';
-import { ProductService, Product } from './services/product.service';
+import { ProductService } from './services/product.service';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +11,27 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  products: Product[] = [];
+  // products: Product[] = [];
+  products:any;
   expandedProductId: number | null = null;  // Track the currently expanded product
 
   constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(products => {
-      this.products = products;
-    });
+    this.getProductListItems();
+  }
+
+
+  getProductListItems(){
+    this.productService.getProductsList().subscribe((res:any) => {
+      this.products = res;
+      console.log("List Items Response: ",this.products);
+    })
   }
 
   navigation(tabPath:string,itemId: number){
     console.log("clicked tab : ", tabPath);
-    this.router.navigate([tabPath, { itemId }]);
+    this.router.navigate([tabPath], { queryParams: {itemId} });
   }
 
 }

@@ -2,15 +2,12 @@
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let product of products">
       <div class="card">
-        <!-- Product image -->
-        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}" />
-        
+        <img [src]="product.product_img" class="card-img-top" alt="{{ product.product_name }}" />
         <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
-          <p class="card-text"><strong>Price:</strong> {{ product.price | currency }}</p>
-          
-          <!-- Toggle button to expand/collapse the card -->
+          <h5 class="card-title">{{ product.product_name }}</h5>
+          <p class="card-text">{{ product.product_description }}</p>
+          <!-- <p class="card-text"><strong>Price:</strong> {{ product.product_price | currency }}</p> -->
+          <p class="card-text"><strong>Price:</strong> {{ product.product_price }}</p>
           <button class="btn btn-primary" routerLink="/product-details" (click)="navigation('/product-details', product.id)">
             View Details
           </button>

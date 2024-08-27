@@ -25,6 +25,7 @@
 						"tsConfig": "projects/portal-container/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
+							"projects/portal-container/src/assets",
 							{
 								"glob": "**/*",
 								"input": "projects/portal-container/public",
@@ -97,6 +98,7 @@
 						"tsConfig": "projects/portal-container/tsconfig.spec.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
+							"projects/portal-container/src/assets",
 							{
 								"glob": "**/*",
 								"input": "projects/portal-container/public"
