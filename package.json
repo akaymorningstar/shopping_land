@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "apiserver": "node projects/backend/server.js",
+    "devapiserver": "nodemon projects/backend/server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
+    "start:both": "concurrently \"npm run devapiserver\" \"npm run run:all\" --log-level debug"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,7 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cors": "^2.8.5",
@@ -34,6 +37,7 @@
     "@angular/cli": "^18.2.1",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
+    "concurrently": "^8.2.2",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -41,6 +45,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ngx-build-plus": "^18.0.0",
+    "nodemon": "^3.1.4",
     "typescript": "~5.5.2"
   }
 }

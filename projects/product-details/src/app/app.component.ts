@@ -39,4 +39,23 @@ export class AppComponent implements OnInit{
       this.product = res;
     })
   }
+
+  addToCart(quantity=1){
+    const data = {
+                  id:this.product.id,
+                  product_name:this.product.product_name,
+                  product_img:this.product.product_img,
+                  product_price:this.product.product_price,
+                  product_quantity:quantity
+                }
+    this.productDetailsService.addToCart(data).subscribe({
+      next: (response) => {
+        console.log('My-Cart Response: ', response);
+        alert("Product added in cart successfully.")
+      },
+      error: (error) => {
+        console.error('My-Cart Error: ', error);
+      }
+    });
+  }
 }
