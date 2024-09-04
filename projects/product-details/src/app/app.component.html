@@ -1,26 +1,3 @@
-<!-- <div class="product-detail" *ngIf="product">
-  <img [src]="product.product_img" alt="{{ product.product_name }}" class="product-image" />
-  <h1 class="product-name">{{ product.product_name }}</h1>
-  <p class="product-price">{{ product.product_price }}</p>
-  <button class="btn btn-primary">Right Aligned Button</button>
-  <p class="product-description">{{ product.product_details }}</p>
-  <div class="image-gallery">
-    <img [src]="product.imageUrls[currentImageIndex]" alt="{{ product.product_name }}" class="product-image" />
-    <div class="thumbnail-container">
-      <div class="thumbnails">
-        <img *ngFor="let image of product.imageUrls; let i = index"
-             [src]="image"
-             (click)="showImage(i)"
-             [class.active]="i === currentImageIndex"
-             class="thumbnail" />
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-
 <div class="product-detail" *ngIf="product">
   <img [src]="product.product_img" alt="{{ product.product_name }}" class="product-image" />
   <div class="basic-details d-flex justify-content-start">
@@ -29,7 +6,12 @@
       <p class="product-price">{{ product.product_price }}</p>
     </div>
     <div class="d-flex justify-content-end product-cart">
-      <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
+      <div class="input-group quantity-button">
+        <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity()">-</button>
+        <input type="text" class="form-control text-center" [value]="quantity" readonly>
+        <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity()">+</button>
+      </div>      
+      <button class="btn btn-primary cart-button" (click)="addToCart(quantity)">Add To Cart</button>
     </div>
   </div>
   <p class="product-description">{{ product.product_details }}</p>

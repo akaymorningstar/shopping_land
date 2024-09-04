@@ -1,20 +1,20 @@
 <!-- src/app/product-list/product-list.component.html -->
-<div class="container cart-container">
+<div *ngIf="!noResults" class="container cart-container">
   <div class="d-flex justify-content-end mt-3 mb-3">
     <div class="me-3">
-      <strong>Total Amount:</strong> ${{ totalAmount }}
+      <strong>Total Amount:</strong> ${{ finalAmount }}
     </div>
     <button class="btn btn-primary" routerLink="/checkout">Proceed</button>
   </div>
 
   <div class="row">
-    <div class="col-md-12 mb-4" *ngFor="let cartProduct of myCartProducts">
+    <div class="col-md-12 mb-4" *ngFor="let cartProduct of myCartProducts; let i = index">
       <div class="card w-100">
         <div class="row no-gutters">
           <div class="col-md-4 cart-product-img">
             <img [src]="cartProduct.product_img" alt="{{ cartProduct.product_name }}" class="card-img" />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div class="card-body">
               <h5 class="card-title">{{ cartProduct.product_name }}</h5>
               <p class="card-text">
@@ -24,6 +24,16 @@
               <button class="btn btn-danger">Delete</button>
             </div>
           </div>
+          <div class="col-md-2">
+            <div class="input-group quantity-button">
+              <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity(i,cartProduct)">-</button>
+              <input [id]="i+'_quantity'" type="text" class="form-control text-center" [value]="cartProduct.product_quantity" readonly>
+              <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity(i,cartProduct)">+</button>
+            </div>
+            <div class="total_amount">
+              Total Amount: <strong>${{cartProduct.product_total_amount}}</strong>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -31,8 +41,12 @@
 
   <div class="d-flex justify-content-center mt-3">
     <div class="me-3">
-      <strong>Total Amount:</strong> ${{ totalAmount }}
+      <strong>Total Amount:</strong> ${{ finalAmount }}
     </div>
     <button class="btn btn-primary" routerLink="/checkout">Proceed</button>
   </div>
+</div>
+
+<div *ngIf="noResults" class="container">
+  <h3>No results to show...</h3>
 </div>

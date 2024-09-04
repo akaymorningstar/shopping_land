@@ -71,12 +71,14 @@ app.post("/api/cart/product", (req, res) => {
         }
         // Find the product in the cartData
         const existingProduct = cartData.find(item => item.id === productId);
+        const numericPrice = parseFloat(body.product_price.replace(/[^0-9.-]+/g,""));
         if (existingProduct) {
             // Update the quantity of the existing product
             existingProduct.product_quantity = Number(existingProduct.product_quantity || 0) + Number(body.product_quantity || 1);
+            existingProduct.product_total_amount = Number(numericPrice) * Number(existingProduct.product_quantity);
         } else {
             // Add the new product
-            cartData.push({ ...body, cart_id: cartData.length + 1, product_quantity: Number(body.product_quantity || 1) });
+            cartData.push({ ...body, cart_id: cartData.length + 1, product_quantity: Number(body.product_quantity || 1), product_total_amount: Number(numericPrice) * Number(body.product_quantity)});
         }
         writeFile(cartData, (err) => {
             if (err) {

@@ -65,10 +65,17 @@
 
   .basic-details{
     .product-key{
-        width: 50%;
+        width: 55%;
     }
     .product-cart{
-        width: 50%;
+        width: 45%;
         padding: 3% 4%;
+        .quantity-button{
+          width: 50% !important;
+          padding: 6%;
+        }
+        .cart-button{
+          margin: 4% 0;
+        }
     }
   }

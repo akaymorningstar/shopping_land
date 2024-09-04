@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   // productId: number;
   // itemId: number;
   itemId: number | null = null;
+  quantity: number = 1;
 
 
   constructor(private productDetailsService: ProductDetailsService,private route: ActivatedRoute) {}
@@ -40,7 +41,19 @@ export class AppComponent implements OnInit{
     })
   }
 
-  addToCart(quantity=1){
+  increaseQuantity() {
+    this.quantity++;
+  }
+
+  decreaseQuantity() {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
+  addToCart(quantity:any){
+    console.log("Item quantity : ",quantity);
+    
     const data = {
                   id:this.product.id,
                   product_name:this.product.product_name,
